@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+html, body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    background:transparent;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+}
+
+/* CHAT */
+#chat{
+    position:absolute;
+    right:10px;
+    top:10px;
+
+    width:400px;
+    height:700px;
+
+    border:none;
+}
+
+/* VIEWER COUNT */
+#viewer{
+    position:absolute;
+    top:10px;
+    left:10px;
+
+    width:200px;
+    height:60px;
+
+    border:none;
+}
+
+/* WATERMARK */
+#watermark{
+    position:absolute;
+    bottom:20px;
+    right:20px;
+
+    font-size:24px;
+    color:white;
+
+    text-shadow:
+    2px 2px 4px black;
+}
+
+/* JAM */
+#clock{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+
+    font-size:22px;
+    color:white;
+
+    text-shadow:
+    2px 2px 4px black;
+}
+
+</style>
+</head>
+
+<body>
+
+<iframe
+id="chat"
+src="PASTE_CHAT_LINK_HERE">
+</iframe>
+
+<iframe
+id="viewer"
+src="PASTE_VIEWER_LINK_HERE">
+</iframe>
+
+<div id="watermark">
+▶ artzam_hfdz
+</div>
+
+<div id="clock">
+00:00:00
+</div>
+
+<script>
+
+function updateClock(){
+
+    const now = new Date();
+
+    const h = String(now.getHours()).padStart(2,'0');
+    const m = String(now.getMinutes()).padStart(2,'0');
+    const s = String(now.getSeconds()).padStart(2,'0');
+
+    document.getElementById("clock").innerHTML =
+    h + ":" + m + ":" + s;
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+</script>
+
+</body>
+</html>
